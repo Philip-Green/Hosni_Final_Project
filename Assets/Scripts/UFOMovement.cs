@@ -10,7 +10,7 @@ public class UFOMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class UFOMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall")
         {
-            Debug.Log("Help");
+            //Debug.Log("Help");
             transform.position += Vector3.left * 25 * Time.deltaTime;
             ufoSpeed *= -1;
             if (ufoSpeed > 0)
@@ -35,8 +35,7 @@ public class UFOMovement : MonoBehaviour
         }
     }
 
-
-
+   
 
 
 

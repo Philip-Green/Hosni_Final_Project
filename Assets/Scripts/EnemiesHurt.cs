@@ -24,6 +24,7 @@ public class EnemiesHurt : MonoBehaviour
         {
             //other.gameObject.GetComponent<EnemiesHealth>().Hurtenemies(damagetaken);
             Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 

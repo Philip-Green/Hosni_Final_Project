@@ -6,6 +6,7 @@ public class EnemyScript : MonoBehaviour
 {
     public Transform Enemy;
     public float enemySpeed, incrementSpeed;
+    [Range(0,10)]public float enemyStrength;
     // Start is called before the first frame update
     void Start()
     {
