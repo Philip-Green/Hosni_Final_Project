@@ -6,21 +6,11 @@ public class EnemyScript : MonoBehaviour
 {
     public Transform Enemy;
     public float enemySpeed, incrementSpeed;
-    [Range(0,10)]public float enemyStrength;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Enemies5= GetComponentInChildren<Enemies5>
-    }
 
-    // Update is called once per frame
     void Update()
     {
         Enemy.position += Vector3.right * enemySpeed * Time.deltaTime;
-
-        
     }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -36,5 +26,4 @@ public class EnemyScript : MonoBehaviour
                 enemySpeed -= incrementSpeed;
         }
     }
-
 }

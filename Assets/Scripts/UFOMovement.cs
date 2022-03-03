@@ -7,18 +7,11 @@ public class UFOMovement : MonoBehaviour
 
     public Transform UFO;
     public float ufoSpeed, incrementSpeed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         UFO.position += Vector3.right * ufoSpeed * Time.deltaTime;
     }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -34,12 +27,4 @@ public class UFOMovement : MonoBehaviour
                 ufoSpeed -= incrementSpeed;
         }
     }
-
-   
-
-
-
-
-
-
 }

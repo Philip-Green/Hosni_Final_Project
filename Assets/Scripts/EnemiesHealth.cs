@@ -7,14 +7,11 @@ public class EnemiesHealth : MonoBehaviour
     public int enemiesMaxHealth;
     public int enemiesCurrentHealth;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         enemiesCurrentHealth = enemiesMaxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (enemiesCurrentHealth <= 0)
@@ -22,8 +19,7 @@ public class EnemiesHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
+    
     public void Hurtenemies(int damagetaken)
     {
         enemiesCurrentHealth -= damagetaken;
@@ -33,10 +29,4 @@ public class EnemiesHealth : MonoBehaviour
     {
         enemiesCurrentHealth = enemiesMaxHealth;
     }
-
-
-
-
-
-
 }   

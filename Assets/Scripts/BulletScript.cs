@@ -10,19 +10,11 @@ public class BulletScript : MonoBehaviour
     public float bulletSpeed;
     private float yFire, xFire;
     public Transform player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         shoot();
     }
-
-
 
     void shoot()
     {
@@ -47,34 +39,23 @@ public class BulletScript : MonoBehaviour
                 shooting = false;
             }
         }
-
         else
         {
             transform.position = player.position;
         }
-
-
-
-
     }
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemies")
         {
-
-
             //other.gameObject.GetComponent<EnemiesHealth>().Hurtenemies(damagetaken);
             Destroy(other.gameObject);
             transform.position = player.position;
             shooting = false;
-
-            //Destroy(gameObject);
         }
-    
-    
-         if (other.gameObject.tag == "UFO")
+        
+        if (other.gameObject.tag == "UFO")
         {
             other.gameObject.GetComponent<EnemiesHealth>().Hurtenemies(damagetaken);
             //Destroy(other.gameObject);
@@ -85,13 +66,7 @@ public class BulletScript : MonoBehaviour
 
             //Destroy(gameObject);
         }
-    
-    
-    
     }
-    
-
-
 }
 
 

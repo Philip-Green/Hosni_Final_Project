@@ -7,17 +7,10 @@ public class PlayerScript : MonoBehaviour
 {
     public float movementSpeed;
     Rigidbody2D rightWall, leftWall;
-    // Start is called before the first frame update
-    void Start()
-    {
-       //Rigidbody2D= GetComponent<>
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        PlayerMovement();
-     
+        PlayerMovement();     
     }
     
     void PlayerMovement()
@@ -29,10 +22,8 @@ public class PlayerScript : MonoBehaviour
         else if (Input.GetAxis("Horizontal") < 0)
         {
             transform.position += Vector3.left * movementSpeed * Time.deltaTime;
-
         }
     }
-
 }
 
 
