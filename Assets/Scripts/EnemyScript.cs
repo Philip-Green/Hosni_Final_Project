@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -9,12 +7,12 @@ public class EnemyScript : MonoBehaviour
 
     void Update()
     {
-        Enemy.position += Vector3.right * enemySpeed * Time.deltaTime;
+        Enemy.position += Vector3.right * (enemySpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.CompareTag("Wall"))
         {
             Debug.Log("Help");
             transform.position += Vector3.down *  25  * Time.deltaTime;

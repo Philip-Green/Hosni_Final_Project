@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UFOMovement : MonoBehaviour
 {
@@ -10,12 +8,12 @@ public class UFOMovement : MonoBehaviour
     
     void Update()
     {
-        UFO.position += Vector3.right * ufoSpeed * Time.deltaTime;
+        UFO.position += Vector3.right * (ufoSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.CompareTag("Wall"))
         {
             //Debug.Log("Help");
             transform.position += Vector3.left * 25 * Time.deltaTime;

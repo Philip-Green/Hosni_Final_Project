@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UFOBullet : MonoBehaviour
 {
     public int damagetaken;
-    public Transform bullet;
     bool shooting;
     public float bulletSpeed;
     private float yFire,xFire;
@@ -31,7 +28,7 @@ public class UFOBullet : MonoBehaviour
     {
         if (shooting)
         {
-            transform.position += Vector3.down * bulletSpeed * Time.deltaTime;
+            transform.position += Vector3.down * (bulletSpeed * Time.deltaTime);
             if (transform.position.y < -4.5f)
             {
                 shooting = false;
@@ -48,7 +45,7 @@ public class UFOBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerHealth>().Hurtplayer(damagetaken);
             transform.position = UFO.position;

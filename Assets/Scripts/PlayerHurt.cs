@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerHurt : MonoBehaviour
 {
@@ -8,7 +6,7 @@ public class PlayerHurt : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerHealth>().Hurtplayer(damagetaken);
         }

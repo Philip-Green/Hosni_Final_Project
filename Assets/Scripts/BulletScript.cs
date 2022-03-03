@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
@@ -30,7 +28,7 @@ public class BulletScript : MonoBehaviour
         if (shooting)
         {
             //bullet.position = new Vector2(xFire, yFire);
-            transform.position += Vector3.up * bulletSpeed * Time.deltaTime;
+            transform.position += Vector3.up * (bulletSpeed * Time.deltaTime);
             //Deal damage if reaches the enemy 
             //if bullet damages
             if (transform.position.y > 4.5f)
@@ -47,7 +45,7 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemies")
+        if (other.gameObject.CompareTag("Enemies"))
         {
             //other.gameObject.GetComponent<EnemiesHealth>().Hurtenemies(damagetaken);
             Destroy(other.gameObject);
@@ -55,16 +53,12 @@ public class BulletScript : MonoBehaviour
             shooting = false;
         }
         
-        if (other.gameObject.tag == "UFO")
+        if (other.gameObject.CompareTag("UFO"))
         {
             other.gameObject.GetComponent<EnemiesHealth>().Hurtenemies(damagetaken);
-            //Destroy(other.gameObject);
-            //Destroy(gameObject);
 
             transform.position = player.position;
             shooting = false;
-
-            //Destroy(gameObject);
         }
     }
 }

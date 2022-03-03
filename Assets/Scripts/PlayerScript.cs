@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UIElements;
-
+﻿using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public float movementSpeed;
@@ -17,11 +13,11 @@ public class PlayerScript : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") > 0)
         {
-            transform.position += Vector3.right * movementSpeed * Time.deltaTime;
+            transform.position += Vector3.right * (movementSpeed * Time.deltaTime);
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
-            transform.position += Vector3.left * movementSpeed * Time.deltaTime;
+            transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
         }
     }
 }
